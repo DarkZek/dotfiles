@@ -65,20 +65,20 @@ else
   echo "  ${GREEN}✓${RESET} ${BOLD}Homebrew${RESET} ${DIM}— installed${RESET}"
 fi
 
-# --- Git (Homebrew version) ---
-if [ "$(which git)" != "/usr/bin/git" ]; then
-  echo "  ${GREEN}✓${RESET} ${BOLD}Homebrew Git${RESET} ${DIM}— already installed${RESET}"
+# --- Jujutsu ---
+if command -v jj &>/dev/null; then
+  echo "  ${GREEN}✓${RESET} ${BOLD}Jujutsu${RESET} ${DIM}— already installed${RESET}"
 else
-  echo "  ${BLUE}…${RESET} ${BOLD}Homebrew Git${RESET} ${DIM}— installing…${RESET}"
-  brew install git --quiet
+  echo "  ${BLUE}…${RESET} ${BOLD}Jujutsu${RESET} ${DIM}— installing…${RESET}"
+  brew install jj --quiet
 
-  echo "  ${GREEN}✓${RESET} ${BOLD}Homebrew Git${RESET} ${DIM}— installed${RESET}"
+  echo "  ${GREEN}✓${RESET} ${BOLD}Jujutsu${RESET} ${DIM}— installed${RESET}"
 fi
 
 # --- Clone dotfiles ---
 if [ ! -d "$TARGET_DIR" ]; then
   echo "  ${BLUE}…${RESET} ${BOLD}Dotfiles${RESET} ${DIM}— cloning…${RESET}"
-  git clone https://github.com/darkzek/dotfiles.git "$TARGET_DIR" 2>/dev/null
+  jj git clone --colocate https://github.com/jeef3/dotfiles.git "$TARGET_DIR" 2>/dev/null
 
   echo "  ${GREEN}✓${RESET} ${BOLD}Dotfiles${RESET} ${DIM}— cloned${RESET}"
 else

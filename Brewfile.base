@@ -2,55 +2,21 @@ tap "isen-ng/dotnet-sdk-versions"
 tap "oven-sh/bun"
 
 # Base
-brew "coreutils"
-brew "findutils"
 brew "zinit"
 
 # Compilers
 brew "make"
 brew "cmake"
-brew "ccls"
-brew "mono"
 
 # CLI Tools
-brew "sevenzip" # 7zip
 brew "wget"
-brew "ov"
-brew "less"
 brew "ncdu"
-brew "eza"
-brew "ack"
-brew "fzf"
-brew "ripgrep"
-brew "fd"
-brew "glow"
-brew "btop"
-brew "jq"
-brew "zoxide"
-brew "bat"
-brew "pandoc"
-brew "grc"
-brew "fswatch"
 
 # Git and tools
 brew "git"
-brew "git-delta"
 brew "git-lfs"
-brew "lazygit"
+brew "jj"
 brew "gh"
-brew "diff-so-fancy"
-brew "difftastic"
-cask "copilot-cli"
-
-# IDE Essentials
-brew "neovim"
-brew "tree-sitter"
-brew "tree-sitter-cli"
-brew "ranger"
-brew "yazi"
-brew "todo-txt"
-brew "tpm"
-brew "tmux"
 
 # Certificate Tools
 brew "mkcert"
@@ -58,40 +24,11 @@ brew "openssl@3"
 brew "gnupg"
 
 # Languages
-cask "dotnet-sdk"
-cask "dotnet-sdk8"
-cask "dotnet-sdk8-0-400"
-brew "go"
-brew "haskell-stack"
-brew "luarocks"
 brew "fnm" # Node version manager, installed NodeJS
-brew "openjdk"
-brew "oven-sh/bun/bun"
-brew "python@3.13"
-brew "textual"
-brew "uv"
-brew "rustup"
-
-# Gifify
-brew "ffmpeg"
-brew "gifsicle"
-brew "imagemagick"
 
 # Terminal
 cask "ghostty"
 
-# Apps
-cask "appcleaner"
-cask "docker-desktop"
-cask "figma"
-cask "firefox@developer-edition"
-cask "httpie-desktop"
-cask "the-unarchiver"
-
 # Mac App Store apps
 brew "mas"
 mas "Xcode", id: 497799835
-mas "Color Picker", id: 1545870783
-mas "Keynote", id: 361285480
-mas "Numbers", id: 361304891
-mas "Pages", id: 361309726

@@ -6,6 +6,9 @@ source "$(dirname "$0")/setup/util.sh"
 # Link dotfiles
 ./link.sh
 
+# Install Git and Jujutsu
+./setup/git
+
 # Install Brew packages
 ./setup/brew ./Brewfile.base
 
@@ -20,5 +23,9 @@ else
   gh auth login
 fi
 
-git remote set-url origin git@github.com:darkzek/dotfiles.git
+if ! jj root >/dev/null 2>&1; then
+  jj git init --colocate
+fi
+
+jj git remote set-url origin git@github.com:darkzek/dotfiles.git
 success "Dotfiles remote updated for write access"

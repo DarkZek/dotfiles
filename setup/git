@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$(dirname "$0")/util.sh"
+
+title "Version Control"
+
+install_formula() {
+  local formula="$1"
+  local label="$2"
+
+  if brew list --versions "$formula" >/dev/null 2>&1; then
+    skip "$label" "already installed, skipping"
+  else
+    info "$label" "installing"
+    brew install "$formula" --quiet
+    success "$label" "installed"
+  fi
+}
+
+install_formula git "Homebrew Git"
+install_formula jj "Jujutsu"
