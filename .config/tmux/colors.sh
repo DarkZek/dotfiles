@@ -1,1 +1,0 @@
-../../theme/palette.sh

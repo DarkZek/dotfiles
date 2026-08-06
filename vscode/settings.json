@@ -1,0 +1,45 @@
+{
+  "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+    "git.autofetch": true,
+    "task.allowAutomaticTasks": "on",
+    "terminal.integrated.initialHint": false,
+    "chat.tools.terminal.autoApprove": {
+        "rushx": true,
+        "jj": true
+    },
+    "git.confirmSync": false,
+    "chat.viewSessions.orientation": "stacked",
+    "githubPullRequests.pullBranch": "never",
+    "yaml.disableSchemaDetection": [
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml"
+    ],
+    "chat.agent.maxRequests": 200,
+    "atlascode.rovodev.showEntitlementNotifications": false,
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilotcli:claude-sonnet-4.6",
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "JetBrains Mono",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "editor.fontLigatures": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "sonarlint.connectedMode.connections.sonarcloud": [
+        {
+            "organizationKey": "seequent",
+            "connectionId": "seequent",
+            "region": "EU"
+        }
+    ],
+    "chat.agent.sandbox.enabled": "off",
+    "workbench.colorTheme": "Light Modern"
+}

@@ -28,6 +28,7 @@ brew "fnm" # Node version manager, installed NodeJS
 
 # Terminal
 cask "ghostty"
+cask "font-jetbrains-mono"
 
 # Mac App Store apps
 brew "mas"

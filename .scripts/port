@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-ps -o pid,command -p $(lsof -i:"$1" -t)
