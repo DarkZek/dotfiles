@@ -20,5 +20,5 @@ else
   gh auth login
 fi
 
-git remote set-url origin git@github.com:jeef3/dotfiles.git
+git remote set-url origin git@github.com:darkzek/dotfiles.git
 success "Dotfiles remote updated for write access"

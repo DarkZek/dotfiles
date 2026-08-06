@@ -15,7 +15,7 @@ GREEN=$(tput setaf 2)
 BLUE=$(tput setaf 4)
 RESET=$(tput sgr0)
 
-DEFAULT_DIR="$HOME/projects/dotfiles"
+DEFAULT_DIR="$HOME/Documents/dotfiles"
 TARGET_DIR="${1:-$DEFAULT_DIR}"
 
 echo ""
@@ -78,7 +78,7 @@ fi
 # --- Clone dotfiles ---
 if [ ! -d "$TARGET_DIR" ]; then
   echo "  ${BLUE}…${RESET} ${BOLD}Dotfiles${RESET} ${DIM}— cloning…${RESET}"
-  git clone https://github.com/jeef3/dotfiles.git "$TARGET_DIR" 2>/dev/null
+  git clone https://github.com/darkzek/dotfiles.git "$TARGET_DIR" 2>/dev/null
 
   echo "  ${GREEN}✓${RESET} ${BOLD}Dotfiles${RESET} ${DIM}— cloned${RESET}"
 else
