@@ -1,6 +1,3 @@
-tap "isen-ng/dotnet-sdk-versions"
-tap "oven-sh/bun"
-
 # Base
 brew "zinit"
 
