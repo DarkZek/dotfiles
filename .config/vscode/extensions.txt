@@ -1,0 +1,11 @@
+bruno-api-client.bruno
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+github.vscode-github-actions
+github.vscode-pull-request-github
+jjk.jjk
+ms-azuretools.vscode-containers
+redhat.vscode-yaml
+sonarsource.sonarlint-vscode
+typescriptteam.native-preview
+usernamehw.errorlens

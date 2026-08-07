@@ -1,6 +1,0 @@
-brew "direnv"
-brew "jfrog-cli"
-brew "ldcli"
-cask "miro"
-
-mas "Bitwarden", id: 1352778147

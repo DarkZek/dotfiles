@@ -22,13 +22,6 @@ symlinks=(
   .copilot
 
   .config/ghostty
-  .config/git
-  .config/nvim
-  .config/ov
-  .config/ranger
-  .config/textual
-  .config/tmux
-  .config/todotxt-tui
 
   .todo.cfg
 )
@@ -37,34 +30,44 @@ symlinks=(
 CONFIG_DIR=~/.config
 
 if [ ! -d "$CONFIG_DIR" ]; then
-  mkdir -p $CONFIG_DIR
+  mkdir -p "$CONFIG_DIR"
 
   success "Config dir" "created"
 else
   skip "Config dir" "already exists, skipping…"
 fi
 
-for symlink in ${symlinks[@]}; do
-  if [ -e "$HOME/$symlink" ] && ! [ -h "$HOME/$symlink" ]; then
-    warn "$symlink" "exists. Please backup and/or remove this first"
-  elif [ -h "$HOME/$symlink" ]; then
-    skip "$symlink" "already linked, skipping…"
+link_dotfile() {
+  local source="$1"
+  local target="$2"
+  local name="$3"
+
+  if [ -e "$target" ] && ! [ -h "$target" ]; then
+    warn "$name" "exists. Please backup and/or remove this first"
+  elif [ -h "$target" ]; then
+    skip "$name" "already linked, skipping…"
   else
-    ln -s "$(pwd)/$symlink" "$HOME/$symlink"
-    success "$symlink" "linked"
+    ln -s "$(pwd)/$source" "$target"
+    success "$name" "linked"
   fi
+}
+
+for symlink in "${symlinks[@]}"; do
+  link_dotfile "$symlink" "$HOME/$symlink" "$symlink"
 done
 
 VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
 VSCODE_SETTINGS="$VSCODE_USER_DIR/settings.json"
+VSCODE_EXTENSIONS=".config/vscode/extensions.txt"
 
 mkdir -p "$VSCODE_USER_DIR"
+link_dotfile ".config/vscode/settings.json" "$VSCODE_SETTINGS" "VS Code settings"
 
-if [ -e "$VSCODE_SETTINGS" ] && ! [ -h "$VSCODE_SETTINGS" ]; then
-  warn "VS Code settings" "exists. Please backup and/or remove this first"
-elif [ -h "$VSCODE_SETTINGS" ]; then
-  skip "VS Code settings" "already linked, skipping…"
+if command -v code >/dev/null 2>&1; then
+  while IFS= read -r extension; do
+    [ -z "$extension" ] || code --install-extension "$extension"
+  done < "$VSCODE_EXTENSIONS"
+  success "VS Code extensions" "installed"
 else
-  ln -s "$(pwd)/vscode/settings.json" "$VSCODE_SETTINGS"
-  success "VS Code settings" "linked"
+  warn "VS Code extensions" "code command not found, skipping"
 fi

@@ -22,11 +22,11 @@ function draw_spinner() {
 
   while :; do
     # Non-blocking read for title/description updates
-    if read -t 0.01 -u 3 line; then
+    if read -t 0 -u 3 line; then
       title="$line"
     fi
 
-    if read -t 0.01 -u 4 line; then
+    if read -t 0 -u 4 line; then
       description="$line"
     fi
 
