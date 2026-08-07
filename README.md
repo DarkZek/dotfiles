@@ -9,7 +9,7 @@ First, make sure full Xcode is installed.
 Run the initial Bootstrap:
 
 ```sh
-curl -fsSL https://raw.github.com/darkzek/dotfiles/master/bootstrap.sh | bash
+curl -fsSL https://raw.github.com/darkzek/dotfiles/main/bootstrap.sh | bash
 ```
 
 This will install Homebrew then Git and then clone this repository to `~/projects/dotfiles`
