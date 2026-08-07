@@ -78,7 +78,7 @@ fi
 # --- Clone dotfiles ---
 if [ ! -d "$TARGET_DIR" ]; then
   echo "  ${BLUE}…${RESET} ${BOLD}Dotfiles${RESET} ${DIM}— cloning…${RESET}"
-  jj git clone --colocate https://github.com/jeef3/dotfiles.git "$TARGET_DIR" 2>/dev/null
+  jj git clone --colocate https://github.com/DarkZek/dotfiles.git "$TARGET_DIR" 2>/dev/null
 
   echo "  ${GREEN}✓${RESET} ${BOLD}Dotfiles${RESET} ${DIM}— cloned${RESET}"
 else
