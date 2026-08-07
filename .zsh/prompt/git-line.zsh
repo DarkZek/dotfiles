@@ -22,17 +22,22 @@ git_line() {
   if [ -n "$__CURRENT_GIT_STATUS" ]; then
     typeset BRANCH=$GIT_BRANCH
 
-    if [ $(tput cols) -lt 120 ]; then
-      BRANCH="${BRANCH:0:15}"
-    fi
-    if [ $(tput cols) -lt 90 ]; then
-      BRANCH="${BRANCH:0:10}"
-    fi
-    if [ $(tput cols) -lt 60 ]; then
-      BRANCH="${BRANCH:0:5}"
+    if jj root &>/dev/null; then
+      typeset JJ_DESCRIPTION=$(jj log -r @ --no-graph -T 'description.first_line()')
+      [ -n "$JJ_DESCRIPTION" ] && BRANCH=$JJ_DESCRIPTION
     fi
 
-    if [ ${#BRANCH} -lt ${#GIT_BRANCH} ] ; then
+    if [ $(tput cols) -lt 120 ]; then
+      BRANCH="${BRANCH:0:50}"
+    fi
+    if [ $(tput cols) -lt 90 ]; then
+      BRANCH="${BRANCH:0:30}"
+    fi
+    if [ $(tput cols) -lt 60 ]; then
+      BRANCH="${BRANCH:0:15}"
+    fi
+
+    if [ ${#BRANCH} -lt ${#JJ_DESCRIPTION:-$GIT_BRANCH} ] ; then
       BRANCH="$BRANCH…"
     fi
 
