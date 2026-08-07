@@ -25,7 +25,8 @@ echo ""
 echo "  This will set up your machine and clone dotfiles to:"
 echo "  📁 ${BOLD}$TARGET_DIR${RESET}"
 echo ""
-read -n 1 -p "  Would you like to continue? (y/n): " answer
+echo "  Would you like to continue? (y/n): "
+read answer
 echo ""
 
 if [ "$answer" != "y" ]; then
