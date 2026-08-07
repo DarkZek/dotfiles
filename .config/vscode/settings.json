@@ -1,6 +1,5 @@
 {
-  "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
-  "terminal.integrated.fontFamily": "JetBrains Mono",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
     "git.autofetch": true,
     "task.allowAutomaticTasks": "on",
     "terminal.integrated.initialHint": false,
@@ -39,5 +38,6 @@
         }
     ],
     "chat.agent.sandbox.enabled": "off",
-    "workbench.colorTheme": "Light Modern"
+    "workbench.colorTheme": "Light Modern",
+    "git.enabled": false
 }

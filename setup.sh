@@ -10,7 +10,8 @@ source "$(dirname "$0")/setup/util.sh"
 ./setup/git
 
 # Install Brew packages
-./setup/brew ./Brewfile.base
+brew bundle install --file ./Brewfile.base
+brew cleanup
 
 # Install global npm packages
 ./setup/npm ./npmfile.base

@@ -1,5 +1,10 @@
 bindkey -v
 
+bindkey -M viins '^[[A' history-beginning-search-backward
+bindkey -M viins '^[[B' history-beginning-search-forward
+bindkey -M vicmd '^[[A' history-beginning-search-backward
+bindkey -M vicmd '^[[B' history-beginning-search-forward
+
 INSERT_MODE="${GREEN}❯"
 CMD_MODE="${RED}❯"
 VIM_MODE=$INSERT_MODE

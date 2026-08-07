@@ -62,7 +62,9 @@ function start_spinner() {
 
   # Hide the cursor and disable input
   printf '\e[?25l'
-  stty -echo -icanon
+  if [[ -t 1 && -r /dev/tty && -w /dev/tty ]]; then
+    stty -echo -icanon </dev/tty
+  fi
 
   draw_spinner &
 
@@ -85,7 +87,9 @@ function stop_spinner() {
 
   # Show the cursor and enable input
   printf '\e[?25h'
-  stty echo icanon
+  if [[ -t 1 && -r /dev/tty && -w /dev/tty ]]; then
+    stty echo icanon </dev/tty
+  fi
 
   printf '\033[2K'
 
